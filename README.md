@@ -154,6 +154,8 @@ cd ports/forge-1.20.1 && ./gradlew build
 
 Matrix jars for multi-version builds live under `ports/*/build/libs/` and may be collected in `dist/matrix/` for releases.
 
+**Maintainers / agents:** multi-version testing and release process is documented in [AGENTS.md](AGENTS.md).
+
 ---
 
 ## Documentation

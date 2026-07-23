@@ -2,10 +2,19 @@
 
 All UI screenshots were taken from a live **NeoForge 26.1.2** session under **Xvfb** (virtual X11), not mockups.
 
+## Logo (CurseForge / Modrinth project icon)
+| File | Source |
+|------|--------|
+| `logo-enchant-master.png` | **Primary** square project logo (512×512) — use on CurseForge |
+| `logo-enchant-master.jpg` | Same art at 1024×1024 (JPEG) |
+| `logo-enchant-master-alt.png` | Alternate rounded app-icon style (512×512) |
+
+Matches the banner palette: pixel enchanted sword, purple/cyan glow, dark honeycomb.
+
 ## Banner
 | File | Source |
 |------|--------|
-| `banner-enchant-master.jpg` | Marketing banner for store headers |
+| `banner-enchant-master.jpg` | Marketing banner for store headers (not the project logo) |
 
 ## Web UI (live server `runServer` + Playwright)
 | File | Description |
