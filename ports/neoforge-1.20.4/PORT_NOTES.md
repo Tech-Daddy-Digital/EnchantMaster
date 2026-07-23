@@ -1,0 +1,29 @@
+# Enchant Master - NeoForge 1.20.4 port
+
+## Target
+- Minecraft **1.20.4**
+- NeoForge **20.4.251**
+- Java **17**
+- Package `dev.enchantmaster`, modid `enchantmaster`, version `1.0.4`
+
+## Status
+**BUILD GREEN** — jar: `dist/matrix/enchantmaster-1.0.4-mc1.20.4-neoforge.jar`
+
+## Loader / build
+- ModDevGradle 2.0.78
+- Item data: **Classic NBT**
+- Config: `ModConfigSpec` (early Neo via `ModLoadingContext.registerConfig`; later via `ModContainer.registerConfig` where available)
+- Networking: stubbed (server + web primary)
+- Sources adapted from working Forge **1.20.1** NBT port
+
+## Build
+```bash
+export GRADLE_OPTS=-Xmx8G
+./gradlew jar
+```
+
+## Smoke test (2026-07-23)
+- `./gradlew runServer` loaded mod (`Enchant Master ready`)
+- RCON: `/enchantmaster web start` succeeded
+- `GET http://127.0.0.1:25570/api/health` → `200 {"ok":true,"mod":"enchantmaster","serverReady":true}`
+- Early NeoForge FML expects `META-INF/mods.toml` (not only `neoforge.mods.toml`)

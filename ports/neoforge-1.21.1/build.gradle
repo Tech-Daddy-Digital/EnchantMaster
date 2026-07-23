@@ -1,0 +1,128 @@
+plugins {
+    id 'java-library'
+    id 'maven-publish'
+    id 'net.neoforged.moddev' version '2.0.78'
+    id 'idea'
+}
+
+version = mod_version
+group = mod_group_id
+base { archivesName = mod_id }
+java.toolchain.languageVersion = JavaLanguageVersion.of(21)
+repositories { mavenCentral() }
+dependencies { compileOnly 'org.jspecify:jspecify:1.0.0' }
+
+def transformedMain = layout.buildDirectory.dir('srcMain')
+def transformedClient = layout.buildDirectory.dir('srcClient')
+
+def idFilter = { String line ->
+    line = line.replace('net.minecraft.resources.Identifier', 'net.minecraft.resources.ResourceLocation')
+    line = line.replaceAll('\\bIdentifier\\b', 'ResourceLocation')
+    line = line.replace('getGameProfile().name()', 'getGameProfile().getName()')
+    line = line.replace('.key().identifier()', '.key().location()')
+    line = line.replace('holder.key().identifier()', 'holder.key().location()')
+    line = line.replace('.identifier()', '.location()')
+    line = line.replace('BuiltInRegistries.ITEM.getValue(', 'BuiltInRegistries.ITEM.get(')
+    line = line.replace('net.neoforged.neoforge.client.network.ClientPacketDistributor',
+            'net.neoforged.neoforge.network.PacketDistributor')
+    line = line.replace('ClientPacketDistributor.', 'PacketDistributor.')
+    line = line.replace('getProfile().id()', 'getProfile().getId()')
+    line = line.replace('getProfile().name()', 'getProfile().getName()')
+    line = line.replace('net.minecraft.util.Util.makeDescriptionId', 'net.minecraft.Util.makeDescriptionId')
+    line = line.replace(
+        'return BuiltInRegistries.ATTRIBUTE.get(ResourceLocation.parse(id));',
+        'return BuiltInRegistries.ATTRIBUTE.getOptional(ResourceLocation.parse(id));')
+
+    line
+}
+
+tasks.register('prepareSources', Sync) {
+    from('src/main/java') {
+        exclude '**/PlayerInventoryService.java'
+        exclude '**/ModNetwork.java'
+        exclude '**/EnchantMasterClient.java'
+    }
+    into(transformedMain)
+    filter idFilter
+}
+
+tasks.register('prepareClientSources', Sync) {
+    from('src/client21/java') {
+        exclude '**/StringListWidget.java'
+    }
+    into(transformedClient)
+    filter idFilter
+}
+
+sourceSets {
+    main {
+        java {
+            srcDirs = [
+                    transformedMain,
+                    transformedClient,
+                    'src/overrides/java'
+            ]
+        }
+        resources {
+            srcDir('src/main/resources')
+            exclude('**/*.bbmodel')
+        }
+    }
+}
+
+tasks.named('compileJava').configure {
+    dependsOn 'prepareSources', 'prepareClientSources'
+}
+
+neoForge {
+    version = project.neo_version
+    runs {
+        client {
+            client()
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+        server {
+            server()
+            programArgument '--nogui'
+            systemProperty 'neoforge.enabledGameTestNamespaces', project.mod_id
+        }
+        configureEach {
+            systemProperty 'forge.logging.markers', 'REGISTRIES'
+            logLevel = org.slf4j.event.Level.INFO
+        }
+    }
+    mods {
+        "${mod_id}" { sourceSet(sourceSets.main) }
+    }
+}
+
+var generateModMetadata = tasks.register('generateModMetadata', ProcessResources) {
+    var replaceProperties = [
+            minecraft_version      : minecraft_version,
+            minecraft_version_range: minecraft_version_range,
+            neo_version            : neo_version,
+            mod_id                 : mod_id,
+            mod_name               : mod_name,
+            mod_license            : mod_license,
+            mod_version            : mod_version,
+    ]
+    inputs.properties replaceProperties
+    expand replaceProperties
+    from 'src/main/templates'
+    into 'build/generated/sources/modMetadata'
+}
+sourceSets.main.resources.srcDir generateModMetadata
+neoForge.ideSyncTask generateModMetadata
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+}
+
+tasks.named('processResources', ProcessResources).configure {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+}
+
+tasks.named('jar', Jar).configure {
+    duplicatesStrategy = DuplicatesStrategy.EXCLUDE
+    archiveClassifier.set('mc1.21.1-neoforge')
+}
