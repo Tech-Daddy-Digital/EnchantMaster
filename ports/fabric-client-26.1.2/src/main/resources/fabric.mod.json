@@ -1,0 +1,24 @@
+{
+  "schemaVersion": 1,
+  "id": "enchantmaster",
+  "version": "${version}",
+  "name": "Enchant Master (Client)",
+  "description": "Optional client UI for Enchant Master on Paper servers.",
+  "authors": ["TechDaddyDigital"],
+  "contact": {
+    "homepage": "https://github.com/Tech-Daddy-Digital/EnchantMaster",
+    "sources": "https://github.com/Tech-Daddy-Digital/EnchantMaster"
+  },
+  "license": "MIT",
+  "environment": "*",
+  "entrypoints": {
+    "main": ["dev.enchantmaster.EnchantMasterMod"],
+    "client": ["dev.enchantmaster.client.EnchantMasterFabricClient"]
+  },
+  "depends": {
+    "fabricloader": ">=0.16.0",
+    "fabric-api": "*",
+    "minecraft": "~26.1.2",
+    "java": ">=25"
+  }
+}

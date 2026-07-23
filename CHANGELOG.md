@@ -13,6 +13,9 @@ Format roughly follows [Keep a Changelog](https://keepachangelog.com/).
 
 ### Ports
 - Rebuilt Forge/NeoForge jars for 1.16.5, 1.20.x, and 1.21.x families as **1.0.5**.
+- **Paper** server plugins for 26.1.2, 1.21.x, and 1.20.1–1.20.6 (`…-paper.jar`).
+- Optional **Fabric client** for Paper in-game UI (`…-fabric-client.jar`, 26.1.2 primary).
+- Paper **1.16.5 deferred** (Forge-only special line).
 
 ## [1.0.4] — 2026-07-23
 

@@ -1,0 +1,22 @@
+name: EnchantMaster
+version: ${version}
+main: dev.enchantmaster.EnchantMasterPlugin
+api-version: '${api_version}'
+authors: [TechDaddyDigital]
+description: Server admin forge toolkit — web UI + optional Fabric client UI
+website: https://github.com/Tech-Daddy-Digital/EnchantMaster
+commands:
+  enchantmaster:
+    description: Enchant Master admin commands
+    usage: /enchantmaster <web|open> ...
+    aliases: [em]
+permissions:
+  enchantmaster.admin:
+    description: Full Enchant Master control (web + open)
+    default: op
+  enchantmaster.web:
+    description: Start/stop/status web UI
+    default: op
+  enchantmaster.open:
+    description: Open in-game forge UI (requires client mod)
+    default: op

@@ -42,6 +42,16 @@ Prefer **GitHub Releases** — each file is labeled for a specific Minecraft + l
 
 ### Supported lines (1.0.5)
 
+#### Paper (server plugin)
+
+| MC | Loader | Notes |
+|----|--------|--------|
+| 26.1.2, 1.21.x, 1.20.1–1.20.6 | **Paper** | Server plugin jars `…-paper.jar` |
+| 26.1.2 | **Fabric client** (optional) | In-game UI when installed; server does **not** need Fabric |
+| 1.16.5 Paper | — | **Deferred** — use Forge 1.16.5 |
+
+#### Forge / NeoForge
+
 | Minecraft | Loader | Notes |
 |-----------|--------|--------|
 | 26.1.x / 26.2.x | NeoForge | Mainline development target |

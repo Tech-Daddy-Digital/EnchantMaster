@@ -62,12 +62,17 @@ Local tooling under `scripts/` may exist for matrix automation; it is **gitignor
 | 1.20.4, 1.20.2 | NeoForge | `ports/neoforge-1.20.*` | **17** | Classic **NBT** |
 | 1.20.1 | **Forge** | `ports/forge-1.20.1` | **17** | Classic NBT |
 | 1.16.5 | **Forge** | `ports/forge-1.16.5` | **8** (full JDK 8) | Classic NBT |
+| **26.1.2** (primary Paper) | **Paper** plugin | `ports/paper-26.1.2` | **25** | Bukkit/Paper API |
+| 1.21–1.21.11 | **Paper** | `ports/paper-1.21*` | **21** | Bukkit/Paper API |
+| 1.20.1–1.20.6 | **Paper** | `ports/paper-1.20*` | **17–21** | Bukkit/Paper API |
+| 26.1.2 | **Fabric client** (optional) | `ports/fabric-client-26.1.2` | **25** | In-game UI for Paper servers |
 
 ### Unavailable by design
 
 | Target | Why |
 |--------|-----|
 | 1.16.5 NeoForge | NeoForge does not exist |
+| **1.16.5 Paper / Fabric** | **Deferred.** 1.16.5 stays a **special Forge-only** line. Future Paper 1.16.5 is its own family (not a clone of paper-26.1.2). Document in matrix reports. |
 | 1.20.0 / 1.20.1 NeoForge | NeoForge starts at **1.20.2** → use Forge 1.20.1 |
 | 26.0.x NeoForge | First 26.x NeoForge line is **26.1.0** |
 | Some minor 1.21.x without a port dir | Prefer nearest dedicated jar or add a real port — do **not** claim support without a build |
@@ -81,6 +86,8 @@ Local tooling under `scripts/` may exist for matrix automation; it is **gitignor
 2. **NeoForge 1.21.0–1.21.10 ports** — separate MDKs under `ports/neoforge-1.21.*`. Many share transforms (Identifier→ResourceLocation, registry Holder modes) and **hand overrides** for inventory/network/client.
 3. **NeoForge 1.20.2–1.20.6** — NBT era (1.20.2/4) vs components (1.20.6); early Neo may need `META-INF/mods.toml` **and** `neoforge.mods.toml`.
 4. **Forge 1.20.1 / 1.16.5** — fully separate APIs (`net.minecraftforge.*`, FG6 / FG5). Read each `ports/*/PORT_NOTES.md`.
+5. **Paper plugins** — `ports/paper-<mc>/` (server-only install). Web UI + forge + inventory. Optional **Fabric client** (`ports/fabric-client-<mc>/`) for `/enchantmaster open` via plugin messaging. No Fabric required on the server.
+6. **Paper matrix harness** — `tools/paper-matrix/paper_matrix_test.py` (Fill download → boot → RCON web start → HTTP + forge + offline inv).
 
 When adding a new MC minor: **clone the nearest working port family**, adjust `gradle.properties` versions, fix compile errors, then run the **smoke loop** below. Do not paper over API breaks by skipping runtime tests.
 

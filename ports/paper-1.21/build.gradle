@@ -1,0 +1,50 @@
+plugins {
+    id 'java'
+}
+
+group = mod_group
+version = mod_version
+
+java {
+    toolchain.languageVersion = JavaLanguageVersion.of(Integer.parseInt(java_version))
+    withSourcesJar()
+}
+
+repositories {
+    mavenCentral()
+    maven { name = 'papermc'; url = 'https://repo.papermc.io/repository/maven-public/' }
+}
+
+dependencies {
+    compileOnly "io.papermc.paper:paper-api:${paper_api_version}"
+    compileOnly 'org.jetbrains:annotations:24.1.0'
+    // Gson is provided at runtime by the server; compile against it explicitly
+    compileOnly 'com.google.code.gson:gson:2.11.0'
+}
+
+processResources {
+    def props = [version: version, api_version: api_version]
+    filesMatching('plugin.yml') {
+        expand props
+    }
+}
+
+tasks.withType(JavaCompile).configureEach {
+    options.encoding = 'UTF-8'
+    options.release = Integer.parseInt(java_version)
+}
+
+jar {
+    archiveBaseName.set('enchantmaster')
+    archiveClassifier.set("mc${minecraft_version}-paper")
+    archiveVersion.set(mod_version)
+}
+
+tasks.register('copyToMatrix', Copy) {
+    dependsOn jar
+    from(layout.buildDirectory.dir('libs')) {
+        include "enchantmaster-${mod_version}-mc${minecraft_version}-paper.jar"
+    }
+    into "${rootProject.projectDir}/../../dist/matrix"
+}
+build.finalizedBy copyToMatrix

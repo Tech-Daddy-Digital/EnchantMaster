@@ -1,0 +1,210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Enchant Master</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+  <header class="top">
+    <div>
+      <h1>Enchant Master</h1>
+      <p class="sub">Admin forge tools · Unsecured (trusted networks only)</p>
+    </div>
+    <div id="status" class="status">Connecting…</div>
+  </header>
+
+  <nav class="tabs" role="tablist">
+    <button type="button" class="tab active" data-tab="forge" role="tab" aria-selected="true">Forge</button>
+    <button type="button" class="tab" data-tab="inventory" role="tab" aria-selected="false">Inventory Modify</button>
+  </nav>
+
+  <!-- ===================== FORGE TAB ===================== -->
+  <main id="tab-forge" class="layout tab-panel active">
+    <aside class="left-col">
+      <section class="panel preview-panel">
+        <h2>Live preview</h2>
+        <div class="icon-wrap">
+          <img id="itemIcon" alt="" width="64" height="64" hidden />
+          <div id="itemIconFallback" class="icon-fallback">?</div>
+        </div>
+        <div id="tooltip" class="mc-tooltip">
+          <div class="tt-empty">Select an item</div>
+        </div>
+      </section>
+
+      <section class="panel give-panel">
+        <h2>Give to player</h2>
+        <select id="playerSelect"></select>
+        <p class="hint">Online players only (live).</p>
+        <p id="overrideRequiredMsg" class="override-required" hidden></p>
+        <button id="submit" class="primary" type="button">Forge &amp; give</button>
+        <div id="toast" class="toast" hidden></div>
+      </section>
+    </aside>
+
+    <div class="right-col">
+      <section class="panel">
+        <h2>1. Item</h2>
+        <div class="row filters">
+          <select id="modFilter" title="Filter by source">
+            <option value="all">All sources</option>
+            <option value="minecraft">Vanilla only</option>
+          </select>
+          <input id="itemSearch" type="search" placeholder="Search items…" />
+        </div>
+        <div id="itemList" class="list"></div>
+        <div id="selectedItem" class="selected">No item selected</div>
+      </section>
+
+      <section class="panel">
+        <h2>2. Enchantments</h2>
+        <label class="check">
+          <input id="overrideLimits" type="checkbox" />
+          Override limits (over-max levels &amp; exclusive conflicts)
+        </label>
+        <div class="enchant-picker" id="enchantPicker" data-picker="forge">
+          <button type="button" class="enchant-picker-toggle full" id="enchantPickerToggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="ep-placeholder">Select an enchantment…</span>
+            <span class="ep-selected" hidden>
+              <span class="ep-name"></span>
+              <span class="ep-desc"></span>
+            </span>
+          </button>
+          <div class="enchant-picker-menu" id="enchantPickerMenu" hidden>
+            <input type="search" class="enchant-picker-search" id="enchantPickerSearch" placeholder="Filter enchantments…" autocomplete="off" />
+            <div class="enchant-picker-list" id="enchantPickerList" role="listbox"></div>
+          </div>
+        </div>
+        <div class="row">
+          <input id="enchantLevel" type="number" min="1" max="255" value="1" title="Level" />
+          <button id="addEnchant" type="button">Add</button>
+        </div>
+        <ul id="enchantList" class="chip-list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>3. Attributes</h2>
+        <p class="hint">From the selected item and its enchantments. Click a row to edit.</p>
+        <ul id="attrList" class="attr-list"></ul>
+        <p id="attrEmpty" class="hint">Select an item to see attributes.</p>
+      </section>
+
+      <section class="panel">
+        <h2>4. Appearance</h2>
+        <label class="field-label">Name</label>
+        <input id="itemName" type="text" placeholder="Custom name" class="full" />
+        <div class="row style-row">
+          <input id="nameColor" type="color" value="#55ffff" title="Name color" />
+          <label class="check"><input id="nameBold" type="checkbox" /> Bold</label>
+          <label class="check"><input id="nameItalic" type="checkbox" /> Italic</label>
+        </div>
+        <label class="field-label">Flavor text (one line per row)</label>
+        <textarea id="loreText" rows="4" placeholder="Line 1&#10;Line 2" class="full"></textarea>
+        <div class="row style-row">
+          <input id="loreColor" type="color" value="#aaaaaa" title="Lore color" />
+          <label class="check"><input id="loreItalic" type="checkbox" checked /> Italic</label>
+          <label class="check"><input id="loreBold" type="checkbox" /> Bold</label>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <!-- ===================== INVENTORY TAB ===================== -->
+  <main id="tab-inventory" class="layout tab-panel" hidden>
+    <aside class="left-col">
+      <section class="panel">
+        <h2>Player</h2>
+        <select id="invPlayerSelect" class="full"></select>
+        <p class="hint">Online and offline players with saved data.</p>
+        <button id="invRefresh" type="button">Refresh inventory</button>
+        <div id="invPlayerMeta" class="hint"></div>
+      </section>
+
+      <section class="panel preview-panel">
+        <h2>Live preview</h2>
+        <div class="icon-wrap">
+          <img id="invItemIcon" alt="" width="64" height="64" hidden />
+          <div id="invItemIconFallback" class="icon-fallback">?</div>
+        </div>
+        <div id="invTooltip" class="mc-tooltip">
+          <div class="tt-empty">Select an inventory item</div>
+        </div>
+      </section>
+
+      <section class="panel give-panel">
+        <p id="invOverrideRequiredMsg" class="override-required" hidden></p>
+        <button id="invApply" class="primary" type="button" disabled>Apply to inventory</button>
+        <div id="invToast" class="toast" hidden></div>
+      </section>
+    </aside>
+
+    <div class="right-col">
+      <section class="panel">
+        <h2>1. Inventory items</h2>
+        <label class="check">
+          <input id="invForgeableOnly" type="checkbox" checked />
+          Only show enchantable / attribute items
+        </label>
+        <input id="invSearch" type="search" placeholder="Search inventory…" class="full" />
+        <div id="invSlotList" class="list inv-list"></div>
+        <div id="invSelected" class="selected">No slot selected</div>
+      </section>
+
+      <section class="panel">
+        <h2>2. Enchantments</h2>
+        <label class="check">
+          <input id="invOverrideLimits" type="checkbox" />
+          Override limits
+        </label>
+        <div class="enchant-picker" id="invEnchantPicker" data-picker="inventory">
+          <button type="button" class="enchant-picker-toggle full" id="invEnchantPickerToggle" aria-haspopup="listbox" aria-expanded="false">
+            <span class="ep-placeholder">Select an enchantment…</span>
+            <span class="ep-selected" hidden>
+              <span class="ep-name"></span>
+              <span class="ep-desc"></span>
+            </span>
+          </button>
+          <div class="enchant-picker-menu" id="invEnchantPickerMenu" hidden>
+            <input type="search" class="enchant-picker-search" id="invEnchantPickerSearch" placeholder="Filter enchantments…" autocomplete="off" />
+            <div class="enchant-picker-list" id="invEnchantPickerList" role="listbox"></div>
+          </div>
+        </div>
+        <div class="row">
+          <input id="invEnchantLevel" type="number" min="1" max="255" value="1" />
+          <button id="invAddEnchant" type="button">Add</button>
+        </div>
+        <ul id="invEnchantList" class="chip-list"></ul>
+      </section>
+
+      <section class="panel">
+        <h2>3. Attributes</h2>
+        <p class="hint">Click a row to edit value. Live updates with item/enchants.</p>
+        <ul id="invAttrList" class="attr-list"></ul>
+        <p id="invAttrEmpty" class="hint">Select an inventory item first.</p>
+      </section>
+
+      <section class="panel">
+        <h2>4. Appearance</h2>
+        <label class="field-label">Name</label>
+        <input id="invItemName" type="text" placeholder="Custom name" class="full" />
+        <div class="row style-row">
+          <input id="invNameColor" type="color" value="#55ffff" />
+          <label class="check"><input id="invNameBold" type="checkbox" /> Bold</label>
+          <label class="check"><input id="invNameItalic" type="checkbox" /> Italic</label>
+        </div>
+        <label class="field-label">Flavor text</label>
+        <textarea id="invLoreText" rows="3" class="full"></textarea>
+        <div class="row style-row">
+          <input id="invLoreColor" type="color" value="#aaaaaa" />
+          <label class="check"><input id="invLoreItalic" type="checkbox" checked /> Italic</label>
+          <label class="check"><input id="invLoreBold" type="checkbox" /> Bold</label>
+        </div>
+      </section>
+    </div>
+  </main>
+
+  <script src="/app.js"></script>
+</body>
+</html>

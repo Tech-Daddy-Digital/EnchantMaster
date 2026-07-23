@@ -1,0 +1,673 @@
+{
+  "results": [
+    {
+      "mc": "26.1.2",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc26.1.2-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc26.1.2-fabric-client.jar"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=1712750"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25701 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    },
+    {
+      "mc": "1.21.11",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc1.21.11-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": false,
+          "detail": "not built yet"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=1740608"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25702 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    },
+    {
+      "mc": "1.21.10",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc1.21.10-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": false,
+          "detail": "not built yet"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=1787680"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25703 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    },
+    {
+      "mc": "1.21.8",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc1.21.8-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": false,
+          "detail": "not built yet"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=1833790"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25704 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    },
+    {
+      "mc": "1.21.5",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc1.21.5-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": false,
+          "detail": "not built yet"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=1871790"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25705 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    },
+    {
+      "mc": "1.21.4",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc1.21.4-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": false,
+          "detail": "not built yet"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=1930819"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25700 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    },
+    {
+      "mc": "1.21.3",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc1.21.3-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": false,
+          "detail": "not built yet"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=1976361"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25701 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    },
+    {
+      "mc": "1.21.1",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc1.21.1-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": false,
+          "detail": "not built yet"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=2039391"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25702 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    },
+    {
+      "mc": "1.21",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc1.21-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": false,
+          "detail": "not built yet"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=2039734"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25703 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    },
+    {
+      "mc": "1.20.6",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc1.20.6-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": false,
+          "detail": "not built yet"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=2040065"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25704 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    },
+    {
+      "mc": "1.20.4",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc1.20.4-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": false,
+          "detail": "not built yet"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=2040380"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25700 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    },
+    {
+      "mc": "1.20.2",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc1.20.2-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": false,
+          "detail": "not built yet"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=2040648"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25705 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    },
+    {
+      "mc": "1.20.1",
+      "stages": [
+        {
+          "name": "build_paper",
+          "ok": true,
+          "detail": "enchantmaster-1.0.5-mc1.20.1-paper.jar"
+        },
+        {
+          "name": "build_client",
+          "ok": false,
+          "detail": "not built yet"
+        },
+        {
+          "name": "download_paper",
+          "ok": true,
+          "detail": "paper.jar"
+        },
+        {
+          "name": "server_boot",
+          "ok": true,
+          "detail": "pid=2040919"
+        },
+        {
+          "name": "web_start",
+          "ok": true,
+          "detail": "\u00a7aEnchant Master web UI started at http://127.0.0.1:25701 (access control OFF (any IP)) "
+        },
+        {
+          "name": "web_health",
+          "ok": true,
+          "detail": "{'ok': True, 'mod': 'enchantmaster', 'loader': 'paper', 'serverReady': True}"
+        },
+        {
+          "name": "catalog",
+          "ok": true,
+          "detail": "items keys=['items']"
+        },
+        {
+          "name": "forge_dryrun",
+          "ok": true,
+          "detail": "{'success': True, 'message': 'Dry-run OK: built minecraft:diamond_sword x1'}"
+        },
+        {
+          "name": "inv_offline",
+          "ok": true,
+          "detail": "modify={'success': True, 'message': 'Set offline inv:0'} lore_ok=True"
+        }
+      ],
+      "overall_ok": true
+    }
+  ],
+  "deferred": [
+    {
+      "mc": "1.16.5",
+      "reason": "Special Forge-only line; Paper 1.16.5 deferred for future dedicated family port"
+    }
+  ]
+}

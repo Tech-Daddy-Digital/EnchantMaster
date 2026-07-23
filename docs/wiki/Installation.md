@@ -54,3 +54,13 @@ Normal players should **not** need the jar.
 ## Singleplayer / integrated server
 
 Works on integrated servers (host is OP). Prefer binding web to `127.0.0.1` if you do not need LAN access.
+
+
+## Paper servers
+
+1. Install **Paper** for your Minecraft version.
+2. Put `enchantmaster-*-paper.jar` in the server `plugins/` folder (not `mods/`).
+3. Restart, then as OP/console: `/enchantmaster web start`.
+4. Optional in-game UI: install the matching **Fabric** client jar + Fabric API on the **player client** only.
+
+**1.16.5 Paper is not published** — use the Forge 1.16.5 jar on Forge.

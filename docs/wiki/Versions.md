@@ -33,3 +33,21 @@ Always match **Minecraft + loader**, not only the mod version number.
 | Some minor 1.21.x | Use nearest tested family jar if no dedicated build |
 
 Detailed test status: [version-ports-report.md](Versions.md).
+
+
+## Paper (1.0.5)
+
+Paper is a **server plugin** line. Optional **Fabric client** unlocks `/enchantmaster open`.
+
+| MC | Loader | Artifact pattern |
+|----|--------|------------------|
+| 26.1.2 | Paper | `…-mc26.1.2-paper.jar` |
+| 1.21.x family | Paper | `…-mc1.21*-paper.jar` |
+| 1.20.1–1.20.6 | Paper | `…-mc1.20*-paper.jar` |
+| 26.1.2 | Fabric client (optional) | `…-mc26.1.2-fabric-client.jar` |
+
+### Deferred
+
+| Target | Reason |
+|--------|--------|
+| **Paper 1.16.5** | **Deferred.** 1.16.5 remains a special **Forge-only** line (`ports/forge-1.16.5`). A future Paper 1.16.5 port is its own family, not a clone of paper-26.1.2. |
