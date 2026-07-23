@@ -50,7 +50,7 @@ Prefer **GitHub Releases** — each file is labeled for a specific Minecraft + l
 | 1.20.1 | **Forge** | No NeoForge for 1.20.1 |
 | 1.16.5 | **Forge** | No NeoForge for 1.16.5 |
 
-Full matrix: [`docs/matrix/version-ports-report.md`](docs/matrix/version-ports-report.md).
+See [docs/wiki/Versions.md](docs/wiki/Versions.md) for supported Minecraft / loader lines.
 
 ---
 
@@ -160,8 +160,8 @@ Matrix jars for multi-version builds live under `ports/*/build/libs/` and may be
 
 | Doc | Description |
 |-----|-------------|
-| [Wiki home](docs/wiki/Home.md) | Full user + admin documentation |
-| | [Media](docs/media/README.md) | Screenshots for stores and README |
+| [Wiki home](docs/wiki/Home.md) | Full user + admin documentation (also publishable to GitHub Wiki) |
+| [Media](docs/media/README.md) | Screenshots for README / releases |
 
 ---
 
@@ -175,7 +175,7 @@ Matrix jars for multi-version builds live under `ports/*/build/libs/` and may be
 
 ## Contributing & support
 
-- Issues and PRs welcome once the GitHub repository is published under your account.
+- Issues and PRs welcome at [Tech-Daddy-Digital/EnchantMaster](https://github.com/Tech-Daddy-Digital/EnchantMaster).
 - Please include Minecraft version, loader version, and whether the issue is web UI, in-game UI, or server-side.
 
 ---
@@ -184,4 +184,4 @@ Matrix jars for multi-version builds live under `ports/*/build/libs/` and may be
 
 MIT — see [LICENSE](LICENSE).
 
-MDK template files originally from NeoForged retain their upstream notices where applicable (`TEMPLATE_LICENSE.txt`).
+Originally bootstrapped from a NeoForged MDK layout.
